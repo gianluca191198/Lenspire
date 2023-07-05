@@ -4,9 +4,8 @@ const ListaImagenes = ({imagenes}) => {
         <div className='contenedor'>
             <div className='lista-imagenes'>
                 {imagenes.map((foto) => (
-                    <div key={foto.id} className="imagen">
-                        <img key={foto.id} src={foto.urls.thumb} alt={foto.alt_description} />
-                    </div>
+                        
+                    <img className="imagen" key={foto.id} src={foto.urls.thumb} alt={foto.alt_description} />
                 ))}
             </div>
         </div>

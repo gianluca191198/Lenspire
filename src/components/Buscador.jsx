@@ -40,6 +40,7 @@ const Buscador = ({imagenes, setImagenes}) => {
 
     useEffect(() => {
         if(imagenes === undefined){
+            console.log("a")
             fetchfotos();
         }
     }, []);
