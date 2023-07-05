@@ -1,0 +1,105 @@
+body {
+  background-color: #646464 !important;
+  background: linear-gradient(to bottom right, #000000, #646464, #558a53, #163013);
+}
+
+
+.titulo-nav-bar{
+  color: #5cb36c;
+  text-decoration: none;
+  padding: 8px 8px 8px 20px;
+  font-size: 20px;
+  font-family: 'Montserrat';
+}
+.imagen{
+  height: auto;
+  margin: 10px;
+  width: 250px !important;
+}
+.lista-imagenes{
+  display: flex;
+  margin: 30px 30px 30px 30px;
+  flex-wrap: wrap;
+  max-width: 1290px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+
+.contenedor{
+  justify-items: center;
+  display: flex;
+  justify-content: center;
+}
+.imagen-grande{
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+}
+
+.titulo{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  color: #5cb36c;
+  font-family: 'Montserrat';
+  text-shadow: 0px 0px 5px #000000;
+  
+}
+
+.nav-bar{
+  background-color: #313131;
+}
+
+.buscador{
+  position: absolute;
+  top: 60% ;
+  left: 50% ;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  background-color: transparent !important;
+}
+
+/* Media Query para ajustar el tamaño del título en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .titulo {
+    font-size: 60px;
+    top: 60% ;
+    left: 50% ;
+  }
+  .buscador{
+    width: 500px;
+    top: 80% ;
+    left: 50% ;
+  }
+}
+
+/* Otras Media Queries para ajustar el tamaño del título en diferentes tamaños de pantalla */
+@media screen and (max-width: 480px) {
+  .titulo {
+    font-size: 40px;
+    top: 55% ;
+    left: 50% ;
+  }
+  .buscador{
+    width: 300px;
+    top: 80% ;
+    left: 50% ;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .titulo {
+    font-size: 20px;
+    top: 20% ;
+    left: 50% ;
+  }
+  .buscador{
+    width: 100px;
+    top: 80% ;
+    left: 50% ;
+  }
+}
