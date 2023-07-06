@@ -92,7 +92,7 @@ body {
   padding: 0px 15px 0px 15px;
   font-family: 'Abel';
   color: #2b2a2a;
-  font-size: 50px;
+  font-size: 30px;
   box-sizing: content-box;
   background-color: #afccaf ;
   display: inline-block;
@@ -128,6 +128,13 @@ body {
 }
 .footer a:hover{
   background-color: #343a40;
+}
+.favoritos-vacio{
+  text-align: center;
+  font-family: 'Lato';
+  font-size: 50px;
+  margin: 50px;
+  color: #afccaf;
 }
 
 /* Media Query para ajustar el tamaño del título en pantallas más pequeñas */

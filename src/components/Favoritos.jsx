@@ -3,12 +3,21 @@ import ListaImagenes from './ListaImagenes';
 const Favoritos = ({favoritos, setFavorito}) => {
     return ( 
         <>
-            <div className='subtitulo'>Favoritos</div>
-            <ListaImagenes
-            imagenes={favoritos}
-            favoritos={favoritos}
-            setFavorito={setFavorito}
-            />
+            {
+                favoritos?.length > 0 ?
+                <div>
+                    <div className='subtitulo'>Favoritos</div>
+                    <ListaImagenes
+                    imagenes={favoritos}
+                    favoritos={favoritos}
+                    setFavorito={setFavorito}
+                    />
+                </div>
+                :
+                <div className='favoritos-vacio'>
+                    No tienes imagenes en favoritos.
+                </div>
+            }
         </>
      );
 }
