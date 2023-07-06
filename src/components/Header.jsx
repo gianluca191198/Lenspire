@@ -1,19 +1,13 @@
 import React, { Fragment, useState } from 'react'; 
 import HeaderFoto from '../resources/Header-foto.jpg'
 import Buscador from './Buscador';
-const Header = ({imagenes, setImagenes}) => {
+const Header = ({setImagenes, seleccionarVista, paginasTotales, setPaginasTotales, paginaActual, setPaginaActual}) => {
     return ( 
         <Fragment>
-            <nav className="navbar navbar-light nav-bar">
-                <a className="titulo-nav-bar" href="#">Lenspire</a>
-            <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a className="navbar-brand" href="#">Hidden brand</a>
-                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li className="nav-item active">
-                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                </li>
-                </ul>
-            </div>
+            <nav className="nav-bar">
+                <a onClick={() => seleccionarVista('Home')} className="titulo-nav-bar" href="#">Lenspire</a>
+                <a onClick={() => seleccionarVista('Home')} className="favoritos" href="#">Home</a>
+                <a onClick={() => seleccionarVista('Favoritos')} className="favoritos" href="#">Favoritos</a>
             </nav>
             <div>
                 <img className='imagen-grande' key="header-img" src={HeaderFoto}></img>
@@ -22,6 +16,10 @@ const Header = ({imagenes, setImagenes}) => {
                 </div>
                 <Buscador
                     setImagenes={setImagenes}
+                    paginasTotales={paginasTotales}
+                    setPaginasTotales={setPaginasTotales}
+                    paginaActual={paginaActual}
+                    setPaginaActual={setPaginaActual}
                     />
             </div>
         </Fragment>

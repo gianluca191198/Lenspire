@@ -1,6 +1,6 @@
 body {
-  /* background: linear-gradient(to bottom right, #3bc529, #3a694a, #173a22, #1a3a17); */
-  background-color: #355c3b!important;
+  background: linear-gradient(to bottom right, #3bc529, #609973, #114221, #1a3a17);
+  /* background-color: #355c3b!important; */
   height: 100%;
   margin:0;
   padding:0;
@@ -9,32 +9,41 @@ body {
 
 
 .titulo-nav-bar{
-  color: #5cb36c;
+  color: #88d195;
   text-decoration: none;
   padding: 8px 8px 8px 20px;
   font-size: 20px;
   font-family: 'Montserrat';
 }
+
+.favoritos{
+  color: #88d195;
+  text-decoration: none;
+  padding: 13px 8px 8px 20px;
+  font-size: 15px;
+  font-family: 'Montserrat';
+}
+
 .imagen{
   height: auto;
-  margin: 5px;
+  margin: 5px 5px 0px 5px;
   width: 250px !important;
+  align-self: flex-end;
 }
 .lista-imagenes{
   display: flex;
   margin: 30px 30px 30px 30px;
   flex-wrap: wrap;
   max-width: 1290px;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
-  align-content: center;
-  align-self: center;
 }
 
 .contenedor{
-  justify-items: center;
-  display: flex;
   justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 .imagen-grande{
   width: 100%;
@@ -47,7 +56,7 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 120px;
+  font-size: 90px;
   color: #98af9c;
   font-family: 'Montserrat';
   text-shadow: 2px 2px 3px #000000;
@@ -56,16 +65,46 @@ body {
 
 .nav-bar{
   background-color: #313131;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .buscador{
   position: absolute;
-  top: 60% ;
+  top: 57% ;
   left: 50% ;
   transform: translate(-50%, -50%);
-  width: 700px;
+  width: 600px;
   background-color: transparent !important;
   /* box-shadow: 0px 0px 6px 2px #000000; */
+}
+
+.paginado{
+  align-self: center;
+}
+.paginado button{
+  margin: 0px 5px 15px 5px;
+}
+
+.subtitulo{
+  text-align: left;
+  padding: 25px 0px 0px 40px ;
+  font-family: 'Abel';
+  color: rgb(43, 42, 42);
+}
+.botones{
+  margin: 5px;
+  height: auto;
+  width: 25px;
+
+
+}
+.tarjeta{
+  border: solid 1px rgb(42, 100, 30);
+  display: grid;
+  border-radius: 4px;
+  background-color: rgb(175, 204, 175);
+  margin: 5px;
 }
 
 .footer{
@@ -74,12 +113,14 @@ body {
   bottom: 0;
   width: 100%;
 }
-.footer p{
+.footer a{
   padding: 10px 10px 10px 10px;
   margin: 0px 10px 0px 10px;
+  text-decoration: none;
+  color: white;
 
 }
-.footer p:hover{
+.footer a:hover{
   background-color: #343a40;
 }
 

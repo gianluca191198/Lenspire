@@ -1,13 +1,30 @@
 import React, {useState, useEffect} from 'react';
-const Buscador = ({imagenes, setImagenes}) => {
+const Buscador = ({imagenes, setImagenes, paginaActual, setPaginasTotales, setPaginaActual}) => {
 
     
     const apiKey = 'SudUi7PHizIEvv-99zhBa4q86SYxr_QA_xy13BhVmbY';
     const [query, setQuery] = useState('');
-    const [imagenesCargadas, setImagenesCargadas] = useState(false);
+    const [formattedQuery, setFormatedQuery] = useState('');
+
+
+    useEffect(() => {
+        if(formattedQuery){
+            fetchfotosPorQuery();
+        }else{
+            fetchfotos();
+        }
+    },[formattedQuery]);
+
+    useEffect(() => {
+        if(formattedQuery){
+            fetchfotosPorQuery();
+        }else{
+            fetchfotos();
+        }
+    },[paginaActual]);
     
     const fetchfotosPorQuery = async () => {
-        fetch(`https://api.unsplash.com/search/photos?query=${query}`, {
+        fetch(`https://api.unsplash.com/search/photos?query=${formattedQuery}&page=${paginaActual}`, {
         headers: {
             Authorization: `Client-ID ${apiKey}`
         }
@@ -15,6 +32,7 @@ const Buscador = ({imagenes, setImagenes}) => {
         .then(response =>{ 
             response.json().then(response => {
             setImagenes(response.results);
+            setPaginasTotales(response.total_pages);
             })
         })
         .catch(error => {
@@ -23,7 +41,7 @@ const Buscador = ({imagenes, setImagenes}) => {
     };
 
     const fetchfotos = async () => {
-        fetch(`https://api.unsplash.com/photos/random?count=20`, {
+        fetch(`https://api.unsplash.com/photos/?count=30&page=${paginaActual}`, {
         headers: {
             Authorization: `Client-ID ${apiKey}`
         }
@@ -40,7 +58,6 @@ const Buscador = ({imagenes, setImagenes}) => {
 
     useEffect(() => {
         if(imagenes === undefined){
-            console.log("a")
             fetchfotos();
         }
     }, []);
@@ -53,9 +70,9 @@ const Buscador = ({imagenes, setImagenes}) => {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      const formattedQuery = query.replace(/ /g, '+');
-      fetchfotosPorQuery();
-      
+      const newQuery = query.replace(/ /g, '+');
+      setFormatedQuery(newQuery);
+      setPaginaActual(1)
     };
 
     return ( 

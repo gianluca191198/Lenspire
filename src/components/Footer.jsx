@@ -3,9 +3,8 @@ const Footer = () => {
     return ( 
         <>
             <div className="bg-dark text-white footer">
-                <p>Contacto</p>
-                <p>Ubicacion</p>
-                <p>Ayuda</p>
+                <a href="https://www.instagram.com/gianbellonee/" target="_blank">Instagram</a>
+                <a href=''>Ayuda</a>
             </div>
         </>
     );
