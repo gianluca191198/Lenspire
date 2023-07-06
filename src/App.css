@@ -88,9 +88,15 @@ body {
 
 .subtitulo{
   text-align: left;
-  padding: 25px 0px 0px 40px ;
+  margin: 25px 0px 0px 40px ;
+  padding: 0px 15px 0px 15px;
   font-family: 'Abel';
-  color: rgb(43, 42, 42);
+  color: #2b2a2a;
+  font-size: 50px;
+  box-sizing: content-box;
+  background-color: #afccaf ;
+  display: inline-block;
+  border-radius: 5px;
 }
 .botones{
   margin: 5px;
@@ -103,7 +109,7 @@ body {
   border: solid 1px rgb(42, 100, 30);
   display: grid;
   border-radius: 4px;
-  background-color: rgb(175, 204, 175);
+  background-color: #afccaf;
   margin: 5px;
 }
 
